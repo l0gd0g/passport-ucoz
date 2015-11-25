@@ -4,10 +4,6 @@
 
     $ npm install passport-ucoz
 
-## Usage
-
-#### Configure Strategy
-
 #### Authenticate Requests
 
 Use `passport.authenticate()`, specifying the `'ucoz'` strategy, to
@@ -34,7 +30,7 @@ application:
         callbackURL: "http://127.0.0.1:3000/auth/ucoz/callback"
       },
       function(req, accessToken, tokenSecret, profile, done) {
-        User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+        User.findOrCreate({ userId: profile.id }, function (err, user) {
           return done(err, user);
         });
       }
@@ -47,7 +43,7 @@ application:
 
 ## Credits
 
-  - [Jared Hanson](http://github.com/jaredhanson)
+  - [Maxim Jarusov](https://github.com/l0gd0g)
 
 ## License
 
